@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>points table</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	</link>
+</head>
+
+<body>
+	<div id="app">
+		<div class="points">
+			<div class="si-widget" data-wdtype="standings" data-seriesid="3978" data-season="13" data-teamid="1107"
+				data-lang="en" data-viewtype="page" data-loaded="true">
+				<div class="si-main-wrap">
+					<div class="si-standingWrap">
+						<div class="si-plyrStastBody">
+							<div class="si-tbl">
+								<div class="si-tHead">
+									<div class="si-tRow">
+										<!-- <div class="si-tCel si-Pos"><span></span></div> -->
+										<div class="si-tCel si-Pos">
+											<span class="si-fullName">Pos</span>
+											<span class="si-shortName">#</span>
+										</div>
+										<!-- <div class="si-tCel si-teamFlag"><span></span></div> -->
+										<div class="si-tCel si-teamFlag">
+											<span class="si-fullName">Teams</span>
+											<span class="si-shortName">Teams</span>
+										</div>
+										<!-- <div class="si-tCel si-teamName"><span></span></div> -->
+										<div class="si-tCel si-teamName">
+											<span class="si-fullName">Teams</span>
+											<span class="si-shortName">Teams</span>
+										</div>
+										<!-- <div class="si-tCel si-Pld"><span></span></div> -->
+										<div class="si-tCel si-Pld">
+											<span class="si-fullName">played</span>
+											<span class="si-shortName">pld</span>
+										</div>
+										<div class="si-tCel si-stnd-won">
+											<span class="si-fullName">won</span>
+											<span class="si-shortName">W</span>
+										</div>
+										<div class="si-tCel si-stnd-lost">
+											<span class="si-fullName">lost</span>
+											<span class="si-shortName">L</span>
+										</div>
+										<div class="si-tCel si-stnd-tied">
+											<span class="si-fullName">tied</span>
+											<span class="si-shortName">tied</span>
+										</div>
+										<div class="si-tCel si-NR">
+											<span class="si-fullName">N/R</span>
+											<span class="si-shortName">N/R</span>
+										</div>
+										<!-- <div class="si-tCel si-Netrr"><span></span></div> -->
+										<div class="si-tCel si-Netrr">
+											<span class="si-fullName">nrr</span>
+											<span class="si-shortName">nrr</span>
+										</div>
+										<!-- <div class="si-tCel si-Pts"><span>pts</span></div> -->
+										<div class="si-tCel si-Pts">
+											<span class="si-fullName">points</span>
+											<span class="si-shortName">pts</span>
+										</div>
+									</div>
+								</div>
+
+								<div class="si-tBody">
+									<div class="si-tRow" :class="{active : el.short_name == 'KXIP'}" v-for="el in info"
+										:key="el.id">
+										<div class="si-tCel si-Pos">
+											<span>{{ el.position }}</span>
+										</div>
+										<div class="si-tCel si-teamFlag" :style="{'background-image': getPic(el.id)}">
+											<span></span>
+										</div>
+										<div class="si-tCel si-teamName">
+											<span class="si-fullName">{{ el.name }}</span>
+											<span class="si-shortName">{{ el.short_name }}</span>
+										</div>
+										<div class="si-tCel si-Pld">
+											<span>{{ el.sport_specific_keys.events_played }}</span>
+										</div>
+										<div class="si-tCel si-stnd-won">
+											<span>{{ el.sport_specific_keys.wins }}</span>
+										</div>
+										<div class="si-tCel si-stnd-lost">
+											<span>{{ el.sport_specific_keys.lost }}</span>
+										</div>
+										<div class="si-tCel si-stnd-tied">
+											<span>{{ el.sport_specific_keys.tied }}</span>
+										</div>
+										<div class="si-tCel si-NR">
+											<span>{{ el.sport_specific_keys.no_result }}</span>
+										</div>
+										<div class="si-tCel si-Netrr">
+											<span>{{ el.sport_specific_keys.net_run_rate }}</span>
+										</div>
+										<div class="si-tCel si-Pts">
+											<span>{{ el.sport_specific_keys.points }}</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+	<script type="text/javascript" src="app.js"> </script>
+
+
+</body>
+
+</html>
